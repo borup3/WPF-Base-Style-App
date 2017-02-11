@@ -6,9 +6,15 @@ A WPF-based base styling app in C#
 This code has been open-sourced as part of my website http://thecode.cafe where you can see a follow-up
 post here: http://thecode.cafe/foss/base-style-app.
 
+Example usage:
+
+![Thumbnail](thumb.png)
+
 ## Information
 
 This is a WPF application with styling for a large collection of standard GUI controls, extracted from Parakeet 2 (https://parakeet-ide.org). It supports live reloading of color schemes.
+
+The best thing here is probably the StyledWindow class, which provides a customizable Window for your applications.
 
 ## Pull Requests & License
 
