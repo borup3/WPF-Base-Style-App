@@ -1,0 +1,10 @@
+﻿<windows:StyledWindow x:Class="WPF_Base_Styling_App.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:windows="clr-namespace:WPF_Base_Styling_App.UI.Windows"
+        UseLayoutRounding="True"
+        Title="Code Cafe WPF Base Styling App" Height="350" Width="525">
+
+
+</windows:StyledWindow>
+

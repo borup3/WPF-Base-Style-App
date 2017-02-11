@@ -1,0 +1,43 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Style TargetType="{x:Type RadioButton}" >
+        <Setter Property="SnapsToDevicePixels" Value="True"/>
+        <Setter Property="OverridesDefaultStyle" Value="True"/>
+        <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+        <Setter Property="Foreground" Value="{DynamicResource ControlFontNormal}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type RadioButton}">
+                    <BulletDecorator>
+                        <BulletDecorator.Bullet>
+                            <Grid Height="12" Width="12">
+                                <Border Name="RadioMark"
+                                        Background="{DynamicResource ControlNormalLight}"
+                                        BorderBrush="{DynamicResource ControlBorder}"
+                                        BorderThickness="1"
+                                        CornerRadius="8" />
+                            </Grid>
+                        </BulletDecorator.Bullet>
+                        <TextBlock Margin="3,0,0,0" Foreground="{TemplateBinding Foreground}">
+                            <ContentPresenter/>
+                        </TextBlock>
+                    </BulletDecorator>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="RadioMark" Property="Background" Value="{DynamicResource ControlActive}"/>
+                        </Trigger>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter TargetName="RadioMark" Property="Background" Value="{DynamicResource ControlSelected}"/>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter TargetName="RadioMark" Property="Background" Value="{DynamicResource ControlDisabled}"/>
+                            <Setter Property="Foreground" Value="{DynamicResource ControlFontDisabled}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

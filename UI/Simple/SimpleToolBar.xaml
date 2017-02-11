@@ -1,0 +1,22 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    
+    <Style TargetType="{x:Type ToolBar}" x:Key="{x:Type ToolBar}">
+        <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+        <Setter Property="Foreground" Value="{DynamicResource ControlFontNormal}" />
+        <Setter Property="Background" Value="{DynamicResource ControlNormalLight}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource ControlBorder}" />
+        <Setter Property="BorderThickness" Value="1" />
+    </Style>
+    
+    <Style TargetType="{x:Type ToolBarOverflowPanel}" x:Key="{x:Type ToolBarOverflowPanel}">
+        <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+        <Setter Property="Visibility" Value="Hidden" />
+    </Style>
+    
+    <Style TargetType="{x:Type ToolBarTray}" x:Key="{x:Type ToolBarTray}">
+        <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+        <Setter Property="Background" Value="{DynamicResource ControlNormal}" />
+    </Style>
+
+</ResourceDictionary>

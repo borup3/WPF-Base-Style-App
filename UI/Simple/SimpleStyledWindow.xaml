@@ -1,0 +1,159 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:windows="clr-namespace:WPF_Base_Styling_App.UI.Windows">
+
+    <Style TargetType="{x:Type windows:StyledWindow}" x:Key="WindowStyle">
+        <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+        <Setter Property="WindowStyle" Value="None"/>
+        <Setter Property="Background" Value="{DynamicResource ControlNormal}" />
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="TextOptions.TextFormattingMode" Value="Display" />
+        <Setter Property="RenderOptions.ClearTypeHint" Value="Enabled" />
+        <Setter Property="RenderOptions.BitmapScalingMode" Value="HighQuality" />
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource ControlBorder}"/>
+        <Setter Property="WindowChrome.WindowChrome">
+            <Setter.Value>
+                <WindowChrome GlassFrameThickness="6"
+                                    ResizeBorderThickness="5"
+                                    CornerRadius="0"
+                                    CaptionHeight="8" />
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type windows:StyledWindow}">
+                    <Border BorderThickness="{TemplateBinding BorderThickness}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            SnapsToDevicePixels="True">
+                        <Grid Background="{TemplateBinding Background}">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+
+                            <Border Grid.Row="0"
+                                    BorderThickness="0,0,0,0"
+                                    WindowChrome.IsHitTestVisibleInChrome="False"
+                                    x:Name="PART_WindowFrame">
+                                <Grid Background="{DynamicResource ControlWindowFrame}">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="2"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="2"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <StackPanel Grid.Column="1"
+                                                Orientation="Horizontal">
+                                        <Image Source="pack://application:,,,/icon_program.ico"
+                                               VerticalAlignment="Center"
+                                               Width="18"
+                                               Height="18"
+                                               Margin="2,0,0,0"/>
+                                        <Label Content="{Binding RelativeSource={RelativeSource AncestorType=Window, Mode=FindAncestor}, Path=Title}"
+                                               Foreground="{DynamicResource ControlFontWindowFrame}"
+                                               VerticalAlignment="Center"/>
+                                    </StackPanel>
+
+                                    <Border Grid.Column="3"
+                                            x:Name="PART_Minimize"
+                                            SnapsToDevicePixels="True"
+                                            WindowChrome.IsHitTestVisibleInChrome="True"
+                                            Width="20"
+                                            Height="20"
+                                            VerticalAlignment="Center"
+                                            Background="Transparent"
+                                            Margin="0,2,0,0">
+                                        <Path VerticalAlignment="Center"
+                                              x:Name="PathMinimize"
+                                              HorizontalAlignment="Center"
+                                              Stroke="{DynamicResource ControlFontNormal}"
+                                              IsHitTestVisible="False"
+                                              WindowChrome.IsHitTestVisibleInChrome="False"
+                                              StrokeThickness="2"
+                                              Data="M 0 7 L 7 7"/>
+                                    </Border>
+
+                                    <Border Grid.Column="4"
+                                            x:Name="PART_Maximize"
+                                            SnapsToDevicePixels="True"
+                                            WindowChrome.IsHitTestVisibleInChrome="True"
+                                            Width="20"
+                                            Height="20"
+                                            VerticalAlignment="Center"
+                                            Background="Transparent"
+                                            Margin="0,2,0,0">
+                                        <Path VerticalAlignment="Center"
+                                              x:Name="PathMaximize"
+                                              HorizontalAlignment="Center"
+                                              Stroke="{DynamicResource ControlFontNormal}"
+                                              IsHitTestVisible="False"
+                                              WindowChrome.IsHitTestVisibleInChrome="False"
+                                              StrokeThickness="2"
+                                              Data="M 0 0 L 7 0 L 7 7 L 0 7 L 0 0"/>
+                                    </Border>
+
+                                    <Border Grid.Column="5"
+                                            x:Name="PART_Close"
+                                            SnapsToDevicePixels="True"
+                                            WindowChrome.IsHitTestVisibleInChrome="True"
+                                            Width="20"
+                                            Height="20"
+                                            VerticalAlignment="Center"
+                                            Background="Transparent"
+                                            Margin="0,2,6,0">
+                                        <Path VerticalAlignment="Center"
+                                              x:Name="PathClose"
+                                              HorizontalAlignment="Center"
+                                              Stroke="{DynamicResource ControlFontNormal}"
+                                              IsHitTestVisible="False"
+                                              WindowChrome.IsHitTestVisibleInChrome="False"
+                                              StrokeThickness="2"
+                                              Data="M 0 0 L 7 7 M 0 7 L 7 0"/>
+                                    </Border>
+
+                                </Grid>
+                            </Border>
+
+                            <Grid Grid.Row="1">
+                                <ContentControl Content="{Binding RelativeSource={RelativeSource AncestorType=Window, Mode=FindAncestor}, Path=Content}"/>
+                            </Grid>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger SourceName="PART_Close" Property="IsMouseOver" Value="True">
+                            <Setter TargetName="PathClose" Property="Stroke" Value="{DynamicResource ControlActive}"/>
+                        </Trigger>
+                        <Trigger SourceName="PART_Maximize" Property="IsMouseOver" Value="True">
+                            <Setter TargetName="PathMaximize" Property="Stroke" Value="{DynamicResource ControlActive}"/>
+                        </Trigger>
+                        <Trigger SourceName="PART_Minimize" Property="IsMouseOver" Value="True">
+                            <Setter TargetName="PathMinimize" Property="Stroke" Value="{DynamicResource ControlActive}"/>
+                        </Trigger>
+                        <Trigger Property="Window.ResizeMode" Value="NoResize">
+                            <Setter TargetName="PART_Maximize" Property="Visibility" Value="Collapsed"/>
+                            <Setter TargetName="PART_Maximize" Property="IsHitTestVisible" Value="False"/>
+                            <Setter TargetName="PART_Maximize" Property="WindowChrome.IsHitTestVisibleInChrome" Value="False"/>
+                            <Setter TargetName="PART_Minimize" Property="Visibility" Value="Collapsed"/>
+                            <Setter TargetName="PART_Minimize" Property="IsHitTestVisible" Value="False"/>
+                            <Setter TargetName="PART_Minimize" Property="WindowChrome.IsHitTestVisibleInChrome" Value="False"/>
+                        </Trigger>
+                        <Trigger Property="Window.ResizeMode" Value="CanMinimize">
+                            <Setter TargetName="PART_Maximize" Property="Visibility" Value="Collapsed"/>
+                            <Setter TargetName="PART_Maximize" Property="IsHitTestVisible" Value="False"/>
+                            <Setter TargetName="PART_Maximize" Property="WindowChrome.IsHitTestVisibleInChrome" Value="False"/>
+                        </Trigger>
+                        <Trigger Property="IsActive" Value="True">
+                            <Setter Property="BorderBrush" Value="{DynamicResource ControlWindowActiveBorder}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

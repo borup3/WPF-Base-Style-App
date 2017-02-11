@@ -1,0 +1,27 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!-- Changing this file does NOT affect color scheme -->
+    <SolidColorBrush x:Key="ControlSelected"></SolidColorBrush>
+    <SolidColorBrush x:Key="ControlActive"></SolidColorBrush>
+    <SolidColorBrush x:Key="ControlNormalLighter"></SolidColorBrush>
+    <SolidColorBrush x:Key="ControlNormalLight"></SolidColorBrush>
+    <SolidColorBrush x:Key="ControlNormal"></SolidColorBrush>
+    <SolidColorBrush x:Key="ControlNormalDark"></SolidColorBrush>
+    <SolidColorBrush x:Key="ControlNormalDarker"></SolidColorBrush>
+    <SolidColorBrush x:Key="ControlDisabled"></SolidColorBrush>
+
+    <SolidColorBrush x:Key="ControlBorder"></SolidColorBrush>
+    <SolidColorBrush x:Key="ControlWindowActiveBorder"></SolidColorBrush>
+    <SolidColorBrush x:Key="ControlWindowFrame"></SolidColorBrush>
+
+    <SolidColorBrush x:Key="ControlFontNormal"></SolidColorBrush>
+    <SolidColorBrush x:Key="ControlFontActive"></SolidColorBrush>
+    <SolidColorBrush x:Key="ControlFontHighlight"></SolidColorBrush>
+    <SolidColorBrush x:Key="ControlFontSelected"></SolidColorBrush>
+    <SolidColorBrush x:Key="ControlFontSelectedLight"></SolidColorBrush>
+    <SolidColorBrush x:Key="ControlFontDisabled"></SolidColorBrush>
+    <SolidColorBrush x:Key="ControlFontNormalDark"></SolidColorBrush>
+    <SolidColorBrush x:Key="ControlFontWindowFrame"></SolidColorBrush>
+
+</ResourceDictionary>
